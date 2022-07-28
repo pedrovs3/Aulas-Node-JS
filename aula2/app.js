@@ -6,3 +6,6 @@ const Cachorro = require('./mod1');
 
 const dalmata = new Cachorro('dalmata');
 dalmata.latir();
+
+const path = require('path');
+console.log(path.resolve(__dirname))
