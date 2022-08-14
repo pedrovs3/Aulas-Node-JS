@@ -24,7 +24,7 @@ const { middlewareGlobal } = require('./src/middlewares/middleware');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, 'public')));
 
-// Configurando a sessão 
+// Configurando a sessão
 const sessionOptions = session({
   secret: 'asdadsjncsdncas',
   store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
@@ -32,8 +32,8 @@ const sessionOptions = session({
   saveUninitialized: false,
   cookie: {
     maxAge: 1000 * 60 * 60 * 24 * 7,
-    httpOnly: true
-  }
+    httpOnly: true,
+  },
 });
 app.use(sessionOptions);
 app.use(flashMessage());
